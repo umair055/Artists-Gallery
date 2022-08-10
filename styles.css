@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+}
+
+
+/*Setting body default margin and padding zero */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    background: #2b3b4d;  
+    min-height: 826px;
+}
+
+/* Positioning Header/Menu Bar on top */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: #19222c;
+    width: 100%;
+}
+
+/*Styles of menu bar item (google font used)*/
+.mainHeading{
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    font-family: 'Acme', sans-serif;
+}
+
+nav ul li a{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    background: #c02afe linear-gradient(90deg,#c02afe,#562afe);
+    color: #fff;
+    text-decoration: none;
+    display: block; 
+    border-radius:5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background: radial-gradient(123.22% 129.67% at 100.89% -5.6%, #000000 0%, #17153A 100%);
+}
+
+/*Hamburger Icon styling and setting it's display to none for desktop views */
+.toggle-menu{
+    color: #fff;
+    float: right;
+    line-height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    border-radius: 10px;
+}
+/*Menu Bar styling ends here */
+
+
+/*Styling input field or form (google font used)*/
+form{
+    float: right;
+    padding-right: 20px;
+}
+
+form .SearchText{
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 16px;
+    border: 1px solid #96abd1;
+    border-radius: 5px;
+    width: 200px;
+    
+}
+
+/*form styling ends here */
+
+/* Body main headings styling (google font used)*/
+section h1{
+    padding-top: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 0.2em;
+}
+
+section h2{
+    padding-top: 15px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Mouse Memoirs', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+
+/*main container containing all images */
+/*flex wrap used to make responsive all the images inside it */
+.container{
+    display: flex;
+    padding-top: 30px;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+
+/*single image styling */
+.container img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: bottom;  
+}
+
+/*image container styling */
+.container .img
+{
+   margin: 20px;
+   border: 2px solid #96abd1;
+   border-radius: 5px;
+}
+
+/*image captions/name styling (google font used) */
+.desc{
+    padding: 15px;
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 22px;
+}
+
+/* footer/last section stling */
+footer{
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 15px;
+    color: rgba(255,255,255,.5);
+    font-family: 'Roboto',sans-serif;
+    background: #19222c;
+}
+
+/* styling for mobile view */
+@media(max-width:600px) {
+    header{
+        padding: 0 20px;
+    }
+    .toggle-menu{     /* display hamburger menu icon */
+        display: block;
+    }
+    nav{    /* hide menu bar elements */
+        display: none;
+    }
+    
+   
+    .active{    /* display drop down menu bar for mobile screen only */
+        position: absolute;
+        width: 100%;
+        background: #172b4d;
+        top: 60px;
+        right: 0;
+        display: block;
+        box-sizing: border-box;
+        transition-timing-function: linear;
+    }
+    /* styling elements for mobile view menu bar */
+    .active ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .active a{
+       background: none;
+       border-radius: 0%;
+       border-bottom: 1px solid #96abd1;
+    }
+
+    section h1{
+        padding-top: 10px;
+       
+    }
+
+    /* set form elements from right float to full width */
+    form{
+        padding-top:70px;
+        float: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 0%;
+    }
+   form .SearchText{
+        width: 100%;
+    }
+    footer{
+        height: 100px;
+    }
+}
+
+
+/* styling for tablet view */
+/* will stack main heading and menu bar item over each other */
+@media(min-width:600px){
+    header, nav{
+        display: flex;
+    }
+    header{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    nav li{
+        margin-right: 10px;
+    }
+
+    section h1{
+        padding-top: 120px;
+    }
+    form{
+        padding-top:90px;
+    }
+    
+}
+
+/* styling for desktop view */
+@media(min-width:1025px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    nav li{
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    }
